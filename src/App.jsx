@@ -1,11 +1,11 @@
-import Counter from "./components/Counter";
+import Todolist from "./components/Todolist";
 
 function App() {
   return (
     <div className="mybox">
       <h1>RB69</h1>
-      <Counter iv={10} step={5}></Counter>
-      <Counter iv={20} step={2}></Counter>
+      <Todolist title="Mokshaja"></Todolist>
+      <Todolist title="Kalyani"></Todolist>
     </div>
   );
 }
