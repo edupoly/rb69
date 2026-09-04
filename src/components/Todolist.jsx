@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 export default function Todolist(props) {
   var [todos, setTodos] = useState([]);
+
   function addTodo(ntd) {
     setTodos([...todos, ntd]);
   }
+
   function deleteTodo(index) {
     setTodos(todos.filter((t, ind) => index != ind));
   }
+
+  useEffect(() => {
+    console.log("Todolist comp useEffect with empty dep array");
+  }, []);
 
   return (
     <div className="mybox">
