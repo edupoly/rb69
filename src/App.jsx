@@ -1,10 +1,18 @@
-import Coutner from "./components/Coutner";
+import { Outlet, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="mybox">
-      <h1>RB69</h1>
-      <Coutner></Coutner>
+    <div className="App">
+      <Link to="/counter">Counter</Link>
+      <br />
+      <Link to="/products">Products</Link>
+      <br />
+      <Link to="/gallery">Gallery</Link>
+      <br />
+      <Link to="/todolist">Todolist</Link>
+      <br />
+      <Link to="/kuralu">Recipes</Link>
+      <Outlet></Outlet>
     </div>
   );
 }

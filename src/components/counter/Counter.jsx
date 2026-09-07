@@ -1,11 +1,11 @@
 import { useReducer } from "react";
 import { reducer, initialState } from "./counterSlice";
 
-function Coutner() {
+function Counter() {
   var [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div className="mybox">
-      <h1>Coutner:{state.count}</h1>
+      <h1>Counter:{state.count}</h1>
       <button
         onClick={() => {
           dispatch({ type: "INC" });
@@ -24,6 +24,6 @@ function Coutner() {
   );
 }
 
-export default Coutner;
+export default Counter;
 
 // state //action //ui
