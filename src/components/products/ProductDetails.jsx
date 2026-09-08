@@ -14,7 +14,7 @@ function ProductDetails() {
         console.log(data);
         setProduct({ ...data });
       });
-  }, []);
+  }, [p.id]);
 
   return (
     <div>

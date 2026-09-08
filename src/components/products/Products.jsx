@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 function Products() {
   var [products, setProducts] = useState([]);
   useEffect(() => {
@@ -15,15 +15,20 @@ function Products() {
   return (
     <div>
       <h1>Products</h1>
-      <ul>
-        {products.map((p) => {
-          return (
-            <li>
-              <Link to={`/productDetails/${p.id}`}>{p.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div style={{ display: "flex" }}>
+        <ul style={{ width: "50%" }}>
+          {products.map((p) => {
+            return (
+              <li>
+                <Link to={`/products/productDetails/${p.id}`}>{p.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <div>
+          <Outlet></Outlet>
+        </div>
+      </div>
     </div>
   );
 }
