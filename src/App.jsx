@@ -1,16 +1,11 @@
-import Posts from "./features/blog/Posts";
-import Counter from "./features/counter/Counter";
-import Recipes from "./features/recipes/Recipes";
-import Todolist from "./features/todolist/Todolist";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="mybox">
-      <h1>RB69</h1>
-      <Posts></Posts>
-      {/* <Recipes></Recipes> */}
-      <Counter></Counter>
-      <Todolist></Todolist>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
     </div>
   );
 }

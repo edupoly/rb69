@@ -19,9 +19,22 @@ export const blogApi = createApi({
         };
       },
     }),
+    deletePost: builder.mutation({
+      query: (id) => {
+        return {
+          url: `/${id}`,
+          method: "DELETE",
+        };
+      },
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllPostsQuery, useAddPostMutation } = blogApi;
+export const {
+  useGetAllPostsQuery,
+  useLazyGetAllPostsQuery,
+  useAddPostMutation,
+  useDeletePostMutation,
+} = blogApi;

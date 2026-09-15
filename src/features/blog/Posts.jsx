@@ -1,13 +1,20 @@
 import { useState } from "react";
 import {
   useAddPostMutation,
+  useDeletePostMutation,
   useGetAllPostsQuery,
+  useLazyGetAllPostsQuery,
 } from "../../services/blogAPI";
 
 function Posts() {
   var { isLoading, data } = useGetAllPostsQuery();
+  var [lazyCallFn] = useLazyGetAllPostsQuery();
+
   var [newPost, setNewPost] = useState({ title: "", author: "" });
+
   var [addTodoFn] = useAddPostMutation();
+  var [deleteTodoFn] = useDeletePostMutation();
+
   console.log(data);
   return (
     <div className="mybox">
@@ -29,7 +36,9 @@ function Posts() {
       <br />
       <button
         onClick={() => {
-          addTodoFn(newPost);
+          addTodoFn(newPost).then(() => {
+            lazyCallFn();
+          });
         }}
       >
         Add Post
@@ -45,6 +54,16 @@ function Posts() {
             <b>{p.title}</b>
             <br />
             <i>{p.author}</i>
+            <br />
+            <button
+              onClick={() => {
+                deleteTodoFn(p.id).then(() => {
+                  lazyCallFn();
+                });
+              }}
+            >
+              Delete
+            </button>
           </li>
         );
       })}
