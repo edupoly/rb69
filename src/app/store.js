@@ -7,6 +7,8 @@ import { blogApi } from "../services/blogAPI";
 import { productsApi } from "../services/productsApi";
 import cartReducer from "../features/products/cartSlice";
 import { empApi } from "../services/employeeApi";
+import { studentsApi } from "../services/studentsApi";
+
 export const store = configureStore({
   reducer: {
     cReducer: counterReducer,
@@ -16,6 +18,7 @@ export const store = configureStore({
     [blogApi.reducerPath]: blogApi.reducer,
     [productsApi.reducerPath]: productsApi.reducer,
     [empApi.reducerPath]: empApi.reducer,
+    [studentsApi.reducerPath]: studentsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -23,6 +26,7 @@ export const store = configureStore({
       blogApi.middleware,
       productsApi.middleware,
       empApi.middleware,
+      studentsApi.middleware,
     ),
 });
 setupListeners(store.dispatch);

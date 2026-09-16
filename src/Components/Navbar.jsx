@@ -49,6 +49,11 @@ function Navbar() {
               </Link>
             </li>
             <li class="nav-item">
+              <Link class="nav-link" to="/students">
+                Students
+              </Link>
+            </li>
+            <li class="nav-item">
               <Link class="nav-link" to="/cart">
                 Cart ({x.cartItems.length})
               </Link>

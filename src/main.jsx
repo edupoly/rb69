@@ -10,6 +10,8 @@ import Counter from "./features/counter/Counter.jsx";
 import Posts from "./features/blog/Posts.jsx";
 import Products from "./features/products/Products.jsx";
 import Employees from "./features/employees/Employees.jsx";
+import Students from "./features/students/Students.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/employees",
         element: <Employees></Employees>,
+      },
+      {
+        path: "/students",
+        element: <Students></Students>,
       },
     ],
   },
