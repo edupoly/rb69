@@ -7,7 +7,7 @@ export const empApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000/employees" }),
   endpoints: (builder) => ({
     getAllEmployees: builder.query({
-      query: () => `/`,
+      query: () => `/getAllEmployees`,
     }),
     addEmployee: builder.mutation({
       query: (newEmployee) => ({
