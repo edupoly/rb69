@@ -1,7 +1,11 @@
+import AddUser from "./AddUser";
+import Navbar from "./components/Navbar/Navbar";
+
 function App() {
   return (
-    <div className="App">
-      <h1>RB69</h1>
+    <div className="mybox">
+      <Navbar></Navbar>
+      <AddUser></AddUser>
     </div>
   );
 }
